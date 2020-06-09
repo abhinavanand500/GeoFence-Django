@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block body %}
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/about-bg.jpg') }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>About Me</h1>
+              <span class="subheading">This can mark you present only when you are in location.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>To make use of geofencing, an administrator or developer must first establish a virtual boundary around a specified location in GPS- or RFID-enabled software. This can be as simple as a circle drawn 100 feet around a location on Google Maps, as specified using APIs when developing a mobile app. This virtual geofence will then trigger a response when an authorized device enters or exits that area, as specified by the administrator or developer.</p>
+            <p>A geofence is most commonly defined within the code of a mobile application, especially since users need to opt-in to location services for the geofence to work. If you go to a concert venue, they might have an app you can download that will deliver information about the event. Or, a retailer might draw a geofence around its outlets to trigger mobile alerts for customers who have downloaded the retailer’s mobile app. In these cases, a geofence that is managed by the retailer is programmed into the app, and users can opt to decline location access for the app.</p>
+            <p>A geofence can also be set up by end-users using geofencing capabilities in their mobile apps. These apps, such as iOS Reminders, allow you to choose an address or location where you want to trigger a specific alert or push notification. This is called an “if this, then that” command, where an app is programmed to trigger an action based off another action. For example, “If I’m five feet from my front door, turn on my lights.” Or you might ask a reminder app to send you an alert once you reach a specific location.</p>
+            <p>Geofencing isn’t just for mobile apps – it’s used to control and track vehicles in the shipping industry, cattle in agriculture industry and – you’ll see this topic pop up in drone discussions. Nearly every drone is pre-programmed to accommodate geofencing, which are usually set up around airports, open-air venues and even the White House. The FAA can set up these drone-resistant geofences upon request – some barriers will stop a drone in mid-air, while others will trigger a warning message to the user. Some drone geofences will ask for a users’ authorization – a process that ties the user’s identity to their drone – so that law enforcement can keep track on unmanned drones.</p>
+        </div>
+      </div>
+    </div>
+
+   {% endblock %}
