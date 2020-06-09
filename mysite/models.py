@@ -18,6 +18,8 @@ class Student(models.Model):
 class Attendance(models.Model):
     sno = models.AutoField(primary_key=True)
     mac = models.CharField(max_length=20)
-    usn = models.ForeignKey(Student, on_delete=models.CASCADE)
-    timestamp = models.DateTimeField(default=now)
+    usn = models.CharField(max_length=20)
+    # usn = models.ForeignKey(Student, on_delete=models.CASCADE)
+    date= models.DateField(default=now)
+    time = models.TimeField(default=now)
 

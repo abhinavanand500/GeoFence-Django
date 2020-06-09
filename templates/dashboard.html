@@ -8,14 +8,13 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="page-heading">
-              <h1>Sign Up</h1>
+              <h1>Attendance Page</h1>
               <span class="subheading">LIST OF STUDENTS PRESENT TODAY</span>
             </div>
           </div>
         </div>
       </div>
-    </header>
-    {% for message in messages %}
+      {% for message in messages %}
         <div class="alert alert-{{ message.tags }} mb-0 alert-dismissible fade show" role="alert">
           <strong>Message : </strong> {{ message }}
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -23,81 +22,50 @@
           </button>
         </div>
     {% endfor %}
-
-
+    </header>
     <!-- Main Content -->
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-{#          <p> PRESENT EMPLOYEES </p>#}
+        <script>
+            window.onload = function () {
 
 
+                var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                title: {
+                    text: "Attendance"
+                },
+                data: [{
+                    type: "pie",
+                    startAngle: 240,
 
+                    indexLabel: "{label} {y}",
+                    dataPoints: [
+                        {y: {{ presentCount}}, label: "Preset"},
+                        {y: {{ totalCount }}-{{ presentCount }}, label: "Absent"}
+                    ]
+                }]
+            });
+            chart.render();
 
+            }
+        </script>
 
-
-
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link data-th-href="@{/css/bootstrap.min.css}" rel="stylesheet">
-    <link data-th-href="@{/css/main.css}" rel="stylesheet">
-</head>
-<script>
-window.onload = function () {
-
-
-	var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	title: {
-		text: "Attendance"
-	},
-	data: [{
-		type: "pie",
-		startAngle: 240,
-
-		indexLabel: "{label} {y}",
-		dataPoints: [
-			{y: {{ presentCount.0.0}}, label: "Preset"},
-			{y: {{ signupCount.0.0}}-{{ presentCount.0.0}}, label: "Absent"}
-		]
-	}]
-});
-chart.render();
-
-}
-</script>
-<body bgcolor="#faebd7">
-
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>
-<div class="container">
-
-    <div class="row">
-        <div id="title">
-            <marquee scrollamount="10" bgcolor="Aqua"><h1>LIVE ATTENDANCE SYSTEM OF OFFICE</h1></marquee>
+        <body bgcolor="#faebd7">
+            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+{#            <div id="title">#}
+            <marquee class="table table-striped" scrollamount="10" bgcolor="Aqua" align="center"><h1>LIVE ATTENDANCE SYSTEM OF OFFICE</h1></marquee>
             <table width="400px" align="center" border="1px">
              <tr>
-                 <th bgcolor="#d2b48c"><h3 align="center">Total Employees : {{ signupCount.0.0}}</h3></th>
+                 <th bgcolor="#d2b48c"><h3 align="center">Total Employees : {{ totalCount }}</h3></th>
              </tr>
-                <tr>
-                    <th bgcolor="#f0e68c"> <h3 align="center">Present Employees : {{ presentCount.0.0}}</h3></th>
-                </tr>
+             <tr>
+                 <th bgcolor="#f0e68c"> <h3 align="center">Present Employees : {{ presentCount}}</h3></th>
+             </tr>
 
-            </table><br>
-
-        </div>
-
-
-
-
-
-        <table id="comments" class="table table-striped" style="width:50%" border="1" align="center">
+            </table>
+             <hr>
+{#             </div>#}
+        <table id="comments" class="table table-striped" style="width:80%" border="1" align="center">
 
             <tr bgcolor="aqua">
                 <th align="center">EID</th>
@@ -108,24 +76,22 @@ chart.render();
 
 
 
-                {% for item in text %}
+                {% for i in object %}
                      <tr class="result"  bgcolor="#e6e6fa">
-                     <td align="center"> {{ item.0 }}</td>
-                     <td align="center"> {{ item.1 }}</td>
-                     <td align="center"> {{ item.2 }}</td>
-                     <td align="center"> {{ item.3 }}</td>
+                     <td align="center"> {{ i.usn }}</td>
+                     <td align="center"> {{ i.date }}</td>
+                     <td align="center"> {{ i.mac }}</td>
+                     <td align="center"> {{ i.time }}</td>
 
                      </tr>
                 {% endfor %}
 
 
         </table>
+
+
     </div>
-</div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<script data-th-src="@{/js/main.js}"></script>
-
-</body>
-
-</html>
-{% endblock %}
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script data-th-src="@{/js/main.js}"></script>
+    </body>
+    {% endblock %}

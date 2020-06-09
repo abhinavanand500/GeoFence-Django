@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from mysite.models import Student, Attendance
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
+from math import sqrt
 from datetime import datetime
 from django.http import JsonResponse
 import json
@@ -24,7 +25,6 @@ def signup(request):
         contact = Student(name=name, phone=phone, usn=usn, password=password, mac=mac, email=email)
         contact.save()
         messages.success(request, "Your response has been Submitted Successfully. Thank You!")
-
     return render(request, 'contact.html')
 
 @csrf_exempt
@@ -32,6 +32,7 @@ def attendance(request):
     print("hii")
     content = json.loads(request.body)
     print(content)
+    var_date = datetime.today().strftime('%Y-%m-%d')
 
     # Emulator location
     # long_coll = 37.421998333333335
@@ -59,45 +60,46 @@ def attendance(request):
     for i in s :
         mac2 = mac2 + "." + i[1:]
     db = Student.objects.filter(usn=usn, password=password1)
+    all = Attendance.objects.filter(date=var_date,usn=usn)
     if(db):
-        print("Success")
-        print(db)
-        data = {'message' : 'Marked Your Attendance', 'code' : 'SUCCESS'}
+        dist = sqrt((long_coll - long) ** 2 + (lat_coll - lat) ** 2)
+        if(dist<10):
+            if(all==False):
+                today = Attendance(mac=mac2, usn=usn)
+                today.save()
+                data = {'message' : 'Marked Your Attendance', 'code' : 'SUCCESS'}
+                return JsonResponse(data)
+            else:
+                data = {'message' : 'Your Attendance is already marked for today', 'code' : 'SUCCESS'}
+                return JsonResponse(data)
+        else:
+            data = {'message' : 'You are outside Geofencing location', 'code' : 'FAILED'}
+            return JsonResponse(data)
+    else:
+        data = {'message' : 'Invalid Username and Password', 'code' : 'FAILED'}
         return JsonResponse(data)
 
-
-
-
-    return render(request, 'contact.html')
-
-
 def display(request):
-    var_date = '"' + datetime.today().strftime('%Y-%m-%d') + '"'
-    # mycursor = mydb.cursor()
-    # mycursor.execute('SELECT * FROM post_prac2 where created_on=' + var_date)
-    # myresult = mycursor.fetchall()
-    # var_query = 'SELECT count(*) FROM post_prac2 where created_on=' + var_date
-    all = Attendance.objects.filter(usn=usn,)
-
-    # print(var_query)
-    mycursor.execute(var_query)
-    count = mycursor.fetchall()
-    # print(count)
-
-    mycursor.execute('SELECT count(*) FROM signup1')
-    signupCount = mycursor.fetchall()
-    # print(signupCount)
-    return render_template('dashboard.html', text=myresult, presentCount=count, signupCount=signupCount)
-
-
+    var_date = datetime.today().strftime('%Y-%m-%d')
+    db1 = Attendance.objects.values()
+    print(db1)
+    all = Attendance.objects.filter(date=var_date)
+    presentcount = len(all)
+    totalcount = len(db1)
+    params = {'object':all , 'presentCount': presentcount, 'totalCount':totalcount}
+    return render(request,'dashboard.html', params)
 
 def about(request):
-    db = Attendance.objects.all().first()
-    db1 = Attendance.objects.values()
-    for i in db1:
-        print(i['date'][0:5])
-    context= {'db' : db}
-    # print(context.usn)
+    content = {'usn':'1NH17IS002', 'mac':'23455553'}
+    usn = content['usn']
+    mac = content['mac']
+    today = Attendance(mac=mac, usn=usn)
+    today.save()
+    print("Insertion done successfully")
+
+
+
+
     return render(request, 'about.html')
 
 
