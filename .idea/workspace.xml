@@ -2,14 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9b1bd4e-e492-47ac-b7e3-7f8d1a12e0c8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/migrations/0002_auto_20200609_1304.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/migrations/0003_present.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/migrations/0004_auto_20200610_0236.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Geofence/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Geofence/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bootstrap.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/clean-blog.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/post 2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post 2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post.html" afterDir="false" />
     </list>
@@ -27,6 +36,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
   </component>
   <component name="ProjectId" id="1d4jiWZjDnGq4InJRh9CW9dlnp3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -81,6 +97,12 @@
       <option name="presentableId" value="Default" />
       <updated>1591691387175</updated>
       <workItem from="1591691390424" duration="2517000" />
+      <workItem from="1591712625069" duration="146000" />
+      <workItem from="1591716898530" duration="2659000" />
+      <workItem from="1591724939010" duration="116000" />
+      <workItem from="1591734387001" duration="837000" />
+      <workItem from="1591735765242" duration="903000" />
+      <workItem from="1591736696445" duration="2694000" />
     </task>
     <servers />
   </component>
@@ -91,21 +113,25 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1591693735711">
+    <state x="320" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591734439505">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1591693735711" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1591693735710">
+    <state x="320" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1591734439505" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1591739635529">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1591693735710" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1591693735709">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1591739635529" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1591739635528">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1591693735709" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1591693735710">
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1591739635528" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1591739635527">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1591693735710" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1591739635527" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1591739635528">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1591739635528" />
   </component>
 </project>
