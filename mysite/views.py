@@ -35,16 +35,16 @@ def attendance(request):
     var_date = datetime.today().strftime('%Y-%m-%d')
 
     # Emulator location
-    # long_coll = 37.421998333333335
-    # lat_coll = -122.08400000000002
+    long_coll = 37.421998333333335
+    lat_coll = -122.08400000000002
 
     # college location
     # long_coll=12.9337
     # lat_coll=77.6921
 
     # home location
-    long_coll = 23.35672372
-    lat_coll = 85.30982892
+    # long_coll = 23.35672372
+    # lat_coll = 85.30982892
 
     usn = content['usn']
     password1 = content['password']
@@ -61,10 +61,11 @@ def attendance(request):
         mac2 = mac2 + "." + i[1:]
     db = Student.objects.filter(usn=usn, password=password1)
     all = Attendance.objects.filter(date=var_date,usn=usn)
+    print("This is all" , all.first())
     if(db):
         dist = sqrt((long_coll - long) ** 2 + (lat_coll - lat) ** 2)
         if(dist<10):
-            if(all==False):
+            if(all.first()==None):
                 today = Attendance(mac=mac2, usn=usn)
                 today.save()
                 data = {'message' : 'Marked Your Attendance', 'code' : 'SUCCESS'}
@@ -81,7 +82,7 @@ def attendance(request):
 
 def display(request):
     var_date = datetime.today().strftime('%Y-%m-%d')
-    db1 = Attendance.objects.values()
+    db1 = Student.objects.values()
     print(db1)
     all = Attendance.objects.filter(date=var_date)
     presentcount = len(all)
@@ -90,16 +91,6 @@ def display(request):
     return render(request,'dashboard.html', params)
 
 def about(request):
-    content = {'usn':'1NH17IS002', 'mac':'23455553'}
-    usn = content['usn']
-    mac = content['mac']
-    today = Attendance(mac=mac, usn=usn)
-    today.save()
-    print("Insertion done successfully")
-
-
-
-
     return render(request, 'about.html')
 
 
