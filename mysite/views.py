@@ -22,9 +22,14 @@ def signup(request):
         password = request.POST['password']
         mac = request.POST['mac']
         email = request.POST['email']
-        contact = Student(name=name, phone=phone, usn=usn, password=password, mac=mac, email=email)
-        contact.save()
-        messages.success(request, "Your response has been Submitted Successfully. Thank You!")
+        adminp = request.POST['adminp']
+        if(adminp=='iamadmin'):
+            contact = Student(name=name, phone=phone, usn=usn, password=password, mac=mac, email=email)
+            contact.save()
+            messages.success(request, "Your response has been Submitted Successfully. Thank You!")
+            return render(request, 'contact.html')
+        else:
+            messages.warning(request, "Your admin Password is not correct. This field is strictly for admin")
     return render(request, 'contact.html')
 
 @csrf_exempt
