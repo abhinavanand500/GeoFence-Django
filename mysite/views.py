@@ -7,7 +7,7 @@ from math import sqrt
 from datetime import datetime
 from django.http import JsonResponse
 import json
-from django.http import StreamingHttpResponse
+
 # Create your views here.
 def home(request):
     return render(request, 'index.html')
@@ -53,15 +53,12 @@ def attendance(request):
     lat = content['lat']
     long1 = float(long)
     lat1 = float(lat)
-    print(mac1)
-    print(usn,password1,long, lat)
     s = mac1.keys()
     mac2 = '12'
     for i in s :
         mac2 = mac2 + "." + i[1:]
     db = Student.objects.filter(usn=usn, password=password1)
     all = Attendance.objects.filter(date=var_date,usn=usn)
-    print("This is all" , all.first())
     if(db):
         dist = sqrt((long_coll - long) ** 2 + (lat_coll - lat) ** 2)
         if(dist<10):
@@ -83,7 +80,6 @@ def attendance(request):
 def display(request):
     var_date = datetime.today().strftime('%Y-%m-%d')
     db1 = Student.objects.values()
-    print(db1)
     all = Attendance.objects.filter(date=var_date)
     presentcount = len(all)
     totalcount = len(db1)
