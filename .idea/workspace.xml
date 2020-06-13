@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9b1bd4e-e492-47ac-b7e3-7f8d1a12e0c8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Geofence/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Geofence/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +101,11 @@
       <workItem from="1591777727279" duration="174000" />
       <workItem from="1591791732953" duration="1949000" />
       <workItem from="1591795399308" duration="280000" />
-      <workItem from="1591809627048" duration="1701000" />
+      <workItem from="1591809627048" duration="3351000" />
+      <workItem from="1591860652331" duration="380000" />
+      <workItem from="1591884748357" duration="656000" />
+      <workItem from="1591888632363" duration="5164000" />
+      <workItem from="1592055941403" duration="186000" />
     </task>
     <servers />
   </component>
@@ -116,21 +120,21 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1591734439505" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1591812222305">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1591902760202">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1591812222305" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1591812222304">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1591902760202" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1591902760201">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1591812222304" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1591812222303">
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1591902760201" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1591902760199">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1591812222303" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1591812222305">
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1591902760199" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1591902760201">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1591812222305" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1591902760201" />
   </component>
 </project>
