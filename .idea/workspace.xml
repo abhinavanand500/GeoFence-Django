@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9b1bd4e-e492-47ac-b7e3-7f8d1a12e0c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Geofence/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Geofence/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirenment.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +43,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
@@ -106,6 +103,7 @@
       <workItem from="1591884748357" duration="656000" />
       <workItem from="1591888632363" duration="5164000" />
       <workItem from="1592055941403" duration="186000" />
+      <workItem from="1592058006697" duration="78000" />
     </task>
     <servers />
   </component>
@@ -120,21 +118,21 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1591734439505" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1591902760202">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1592058091986">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1591902760202" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1591902760201">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1592058091986" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1592058091984">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1591902760201" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1591902760199">
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1592058091984" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1592058091983">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1591902760199" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1591902760201">
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1592058091983" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1592058091985">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1591902760201" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1592058091985" />
   </component>
 </project>
