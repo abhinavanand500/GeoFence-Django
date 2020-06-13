@@ -1,4 +1,4 @@
 django == 3.0.7
 Jinja2==2.5.5
-PyYAML==3.09
+PyYAML==5.1
 Pygments==1.4
