@@ -9,13 +9,14 @@ from django.http import JsonResponse
 import json
 
 # Create your views here.
+
+
 def home(request):
     return render(request, 'index.html')
 
 
-
 def signup(request):
-    if (request.method == 'POST') :
+    if (request.method == 'POST'):
         name = request.POST['name']
         phone = request.POST['phone']
         usn = request.POST['usn']
@@ -23,14 +24,18 @@ def signup(request):
         mac = request.POST['mac']
         email = request.POST['email']
         adminp = request.POST['adminp']
-        if(adminp=='iamadmin'):
-            contact = Student(name=name, phone=phone, usn=usn, password=password, mac=mac, email=email)
+        if(adminp == 'iamadmin'):
+            contact = Student(name=name, phone=phone, usn=usn,
+                              password=password, mac=mac, email=email)
             contact.save()
-            messages.success(request, "Your response has been Submitted Successfully. Thank You!")
+            messages.success(
+                request, "Your response has been Submitted Successfully. Thank You!")
             return render(request, 'contact.html')
         else:
-            messages.warning(request, "Your admin Password is not correct. This field is strictly for admin")
+            messages.warning(
+                request, "Your admin Password is not correct. This field is strictly for admin")
     return render(request, 'contact.html')
+
 
 @csrf_exempt
 def attendance(request):
@@ -58,29 +63,28 @@ def attendance(request):
     lat = content['lat']
     long1 = float(long)
     lat1 = float(lat)
-    s = mac1.keys()
-    mac2 = '12'
-    for i in s :
-        mac2 = mac2 + "." + i[1:]
     db = Student.objects.filter(usn=usn, password=password1)
-    all = Attendance.objects.filter(date=var_date,usn=usn)
+    all = Attendance.objects.filter(date=var_date, usn=usn)
     if(db):
         dist = sqrt((long_coll - long) ** 2 + (lat_coll - lat) ** 2)
-        if(dist<10):
-            if(all.first()==None):
-                today = Attendance(mac=mac2, usn=usn)
+        if(dist < 10):
+            if(all.first() == None):
+                today = Attendance(mac=mac1, usn=usn)
                 today.save()
-                data = {'message' : 'Marked Your Attendance', 'code' : 'SUCCESS'}
+                data = {'message': 'Marked Your Attendance', 'code': 'SUCCESS'}
                 return JsonResponse(data)
             else:
-                data = {'message' : 'Your Attendance is already marked for today', 'code' : 'SUCCESS'}
+                data = {
+                    'message': 'Your Attendance is already marked for today', 'code': 'SUCCESS'}
                 return JsonResponse(data)
         else:
-            data = {'message' : 'You are outside Geofencing location', 'code' : 'FAILED'}
+            data = {'message': 'You are outside Geofencing location',
+                    'code': 'FAILED'}
             return JsonResponse(data)
     else:
-        data = {'message' : 'Invalid Username and Password', 'code' : 'FAILED'}
+        data = {'message': 'Invalid Username and Password', 'code': 'FAILED'}
         return JsonResponse(data)
+
 
 def display(request):
     var_date = datetime.today().strftime('%Y-%m-%d')
@@ -88,11 +92,10 @@ def display(request):
     all = Attendance.objects.filter(date=var_date)
     presentcount = len(all)
     totalcount = len(db1)
-    params = {'object':all , 'presentCount': presentcount, 'totalCount':totalcount}
-    return render(request,'dashboard.html', params)
+    params = {'object': all, 'presentCount': presentcount,
+              'totalCount': totalcount}
+    return render(request, 'dashboard.html', params)
+
 
 def about(request):
     return render(request, 'about.html')
-
-
-
