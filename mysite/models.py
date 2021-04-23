@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.timezone import now
 
+
 # Create your models here.
 
 class Student(models.Model):
@@ -20,6 +21,5 @@ class Attendance(models.Model):
     mac = models.CharField(max_length=20)
     usn = models.CharField(max_length=20)
     # usn = models.ForeignKey(Student, on_delete=models.CASCADE)
-    date= models.DateField(default=now)
+    date = models.DateField(default=now)
     time = models.TimeField(default=now)
-

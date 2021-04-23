@@ -7,6 +7,7 @@ from math import sqrt
 from datetime import datetime
 from django.http import JsonResponse
 import json
+import time
 
 # Create your views here.
 
@@ -40,13 +41,14 @@ def signup(request):
 @csrf_exempt
 def attendance(request):
     print("hii")
-    content = json.loads(request.body)
-    print(content)
+    con = json.loads(request.body)
+    print(con['params'])
+    content = con['params']
     var_date = datetime.today().strftime('%Y-%m-%d')
 
     # Emulator location
-    long_coll = 37.421998333333335
-    lat_coll = -122.08400000000002
+    long_coll = -122.08400000000002
+    lat_coll = 37.421998333333335
 
     # college location
     # long_coll=12.9337
@@ -58,18 +60,21 @@ def attendance(request):
 
     usn = content['usn']
     password1 = content['password']
-    mac1 = content['mac']
-    long = content['long']
-    lat = content['lat']
-    long1 = float(long)
-    lat1 = float(lat)
+    mac1 = content['uq']
+    long1 = content['long']
+    lat1 = content['lat']
+    # long1 = floa(long)
+    # lat1 = float(lat)
+    curr_time = time.localtime()
+    curr_clock = time.strftime("%H:%M:%S", curr_time)
     db = Student.objects.filter(usn=usn, password=password1)
     all = Attendance.objects.filter(date=var_date, usn=usn)
     if(db):
-        dist = sqrt((long_coll - long) ** 2 + (lat_coll - lat) ** 2)
+        dist = sqrt((long_coll - long1) ** 2 + (lat_coll - lat1) ** 2)
+        print(dist)
         if(dist < 10):
             if(all.first() == None):
-                today = Attendance(mac=mac1, usn=usn)
+                today = Attendance(mac=mac1, usn=usn, time=curr_clock)
                 today.save()
                 data = {'message': 'Marked Your Attendance', 'code': 'SUCCESS'}
                 return JsonResponse(data)
